@@ -1,2 +1,2 @@
-window.CFG={SUPABASE_URL:"https://YOUR-PROJECT.supabase.co",SUPABASE_KEY:"YOUR-ANON-KEY",ADMIN_EMAIL:"you@example.com",
-ADMIN_URL:"https://YOUR-ADMIN-SITE.vercel.app",LOVE_URL:"https://YOUR-LOVE-SITE.vercel.app"}
+window.CFG={SUPABASE_URL:"https://vrfnxnburfznrkzydyxf.supabase.co",SUPABASE_KEY:"sb_publishable_WnPfOmiZ9teM5XHmZQinOQ_gZP1FNcW",ADMIN_EMAIL:"jalilidriss111@gmail.com",
+ADMIN_URL:https://love-admin-site.vercel.app"}
