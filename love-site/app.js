@@ -38,7 +38,7 @@ function render(){TM.forEach(clearInterval);TM=[];document.documentElement.lang=
 if(!sessionStorage.ok)return gate();const[r,g]=location.hash.slice(2).split('/');route=r||'home';gid=g||'';if(route!=='games')window.CUR='';
 $('app').innerHTML=shell(V[route]?V[route]():V.home());B[route]&&B[route]();if(route==='home')iv(()=>{const c=$('clk');c&&(c.textContent=clk())},1000)}
 function setLang(){lang=lang==='ar'?'en':'ar';localStorage.lang=lang;render()}
-function ok(){faceStop&&faceStop();sessionStorage.ok=1;err='';render();Prog.load().then(()=>{if(sessionStorage.ok&&!(route==='games'&&gid))render()})}
+function ok(){faceStop&&faceStop();sessionStorage.ok=1;err='';render();if(Prog && typeof Prog.load === 'function'){Prog.load().then(()=>{if(sessionStorage.ok&&!(route==='games'&&gid))render()}).catch(()=>{});}}
 function gate(){$('app').innerHTML=`<div class="gate"><div class="card"><div class="row" style="justify-content:flex-end"><button class="chip" onclick="setLang()">${lang==='ar'?'EN':'عربي'}</button></div><h1 style="font-size:1.8rem">👑 ${t('gateT')}</h1>
 <div class="row"><button class="chip ${gm==='code'?'on':''}" onclick="gm='code';err='';gate()">${t('code')}</button><button class="chip ${gm==='face'?'on':''}" onclick="gm='face';gate()">${t('face')}</button></div>
 ${gm==='face'?`<video id="cam" class="cam" autoplay muted playsinline></video><p class="mut" id="fm">…</p>`:`<input id="c" type="password" inputmode="numeric" autocomplete="off" placeholder="${t('ph')}" onkeydown="event.key==='Enter'&&tryCode()" oninput="tryCode(1)"><button class="gold" onclick="tryCode()">${t('enter')}</button>`}<p class="err">${err}</p></div></div>`;if(gm==='face')face()}
